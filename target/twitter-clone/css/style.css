@@ -1,0 +1,22 @@
+h1 {
+    min-height: 20vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    min-height: 0vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
