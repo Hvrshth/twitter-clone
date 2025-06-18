@@ -5,8 +5,23 @@
 <web-app>
   <display-name>Twitter</display-name>
 
+  <!-- Welcome file -->
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
-</web-app>
 
+  <!-- DB Config -->
+  <context-param>
+    <param-name>dbUrl</param-name>
+    <param-value>jdbc:mysql://localhost:3306/twitter</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbUser</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbPassword</param-name>
+    <param-value>root</param-value>
+  </context-param>
+
+</web-app>
