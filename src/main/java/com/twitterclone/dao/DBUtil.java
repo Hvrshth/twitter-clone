@@ -1,7 +1,9 @@
 package com.twitterclone.dao;
 
-import java.sql.*;
-import javax.servlet.ServletContext; 
+import java.sql.Connection;
+import java.sql.DriverManager; 
+
+import javax.servlet.ServletContext;
 
 public class DBUtil {
 
@@ -12,12 +14,12 @@ public class DBUtil {
     //It represents the web application environment shared by all servlets.
     //It's used to access application-wide configuration data, like init parameters, files, and resources.
 
-    public static Connection getConnection(ServletContext context) throws exception{
+    public static Connection getConnection(ServletContext context) throws Exception{
 
         // Get DB connection info from servlet context
-        String url = context.getInitparameter("dbUrl"); //fetches initialization parameters defined in the web app’s deployment descriptor (web.xml)
-        String usr = context.getInitparameter("dbUser");
-        String pass = context.getInitparameter("dbPassword");
+        String url = context.getInitParameter("dbUrl"); //fetches initialization parameters defined in the web app’s deployment descriptor (web.xml)
+        String usr = context.getInitParameter("dbUser");
+        String pass = context.getInitParameter("dbPassword");
 
         // Loads JDBC driver
         Class.forName("com.mysql.cj.jdbc.Driver");
