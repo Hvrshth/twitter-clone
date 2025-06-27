@@ -1,3 +1,5 @@
+//UserDAO.java
+
 package com.twitterclone.dao;
 
 import java.sql.Connection;
@@ -16,18 +18,18 @@ public class UserDAO {
     }
 
     // Validates email and password against DB
-    public boolean ValidateUser(String email, String password) throws Exception {
+    public boolean validateUser(String email, String password) throws Exception {
         String query = "SELECT * FROM USER WHERE email_address = ? AND password = ?";
         
         try(Connection conn = DBUtil.getConnection(context);
-        PreparedStatement ps = conn.prepareStatement(query)){
+        PreparedStatement ps = conn.prepareStatement(query)) {
 
         ps.setString(1, email);
         ps.setString(2, password);
-        ResultSet rs = ps.executeQuery();
 
-        return rs.next(); // true if user found 
-
+        try(ResultSet rs = ps.executeQuery()) {
+            return rs.next(); // true if user found
+        }
         }
     }
 }
