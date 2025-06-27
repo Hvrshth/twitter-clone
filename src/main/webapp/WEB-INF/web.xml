@@ -27,7 +27,7 @@
   <!-- Servlet Mapping -->
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>LoginServlet</servlet-class>
+    <servlet-class>com.twitterclone.servlet.LoginServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
