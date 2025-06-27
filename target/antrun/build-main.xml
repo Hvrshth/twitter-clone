@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <copy file="C:\Users\ihars\Desktop\twitter-clone\target/twitter-clone.war" todir="C:/Tomcat 9.0/webapps" overwrite="true"/>
+</target>
+</project>
