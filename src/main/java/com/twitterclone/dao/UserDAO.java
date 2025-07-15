@@ -24,12 +24,28 @@ public class UserDAO {
         try(Connection conn = DBUtil.getConnection(context);
         PreparedStatement ps = conn.prepareStatement(query)) {
 
-        ps.setString(1, email);
-        ps.setString(2, password);
+            ps.setString(1, email);
+            ps.setString(2, password);
 
-        try(ResultSet rs = ps.executeQuery()) {
-            return rs.next(); // true if user found
+            try(ResultSet rs = ps.executeQuery()) {
+                return rs.next(); // true if user found
+            }
         }
+    }
+
+    public boolean registerUser(String first_name, String last_name, String email, String password) throws Exception {
+        String query = "INSERT INTO user (first_name, last_name, email_address, password) VALUES (?, ?, ?, ?)";
+        
+        try(Connection conn = DBUtil.getConnection(context);
+        PreparedStatement ps = conn.prepareStatement(query)) {
+
+            ps.setString(1, first_name);
+            ps.setString(2, last_name);
+            ps.setString(3, email);
+            ps.setString(4, password);
+
+           int rowsAffected = ps.executeUpdate();
+           return rowsAffected > 0; // true if user was inserted
         }
     }
 }
