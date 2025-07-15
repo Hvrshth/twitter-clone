@@ -1,3 +1,4 @@
 com\twitterclone\servlet\LoginServlet.class
-com\twitterclone\util\DBUtil.class
+com\twitterclone\servlet\SignupServlet.class
 com\twitterclone\dao\UserDAO.class
+com\twitterclone\util\DBUtil.class
