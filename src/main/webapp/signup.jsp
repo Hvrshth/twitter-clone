@@ -21,10 +21,7 @@
     <div class="container">
         <form action="signup" method="post">
             <div>
-                <input type="text" name="first_name" placeholder="First Name" required> <br> <br>
-            </div>
-            <div>
-                <input type="text" name="last_name" placeholder="Last Name" required> <br> <br>
+                <input type="text" name="name" placeholder="Name" required> <br> <br>
             </div>
             <div>
                 <input type="email" name="email" placeholder="Email address" required> <br> <br>
