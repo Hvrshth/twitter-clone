@@ -1,7 +1,11 @@
-<%@ page import="java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 
 <% 
+    // Prevents browser caching
+    response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
+
     // Check for valid session
     if (session.getAttribute("user") == null) {
         response.sendRedirect("login.jsp");
