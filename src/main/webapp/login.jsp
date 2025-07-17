@@ -1,5 +1,18 @@
 <!-- login.jsp -->
 <%@ page contentType="text/html; charset=UTF-8" %>
+<% 
+    // Prevents browser caching
+    response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
+
+    // Check if valid session exists already
+    if (session.getAttribute("user") != null) {
+        response.sendRedirect("home.jsp");
+        return; // Stop further processing
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
