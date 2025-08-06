@@ -20,11 +20,8 @@
 
     <div class="container">
         <form action="signup" method="post">
-            <div>
-                <input type="text" name="name" placeholder="Name" required> <br> <br>
-            </div>
-            <div>
-                <input type="email" name="email" placeholder="Email address" required> <br> <br>
+           <div>
+                <input type="text" name="username" placeholder="Username" required> <br> <br>
             </div>
             <div>
                 <input type="password" name="password" placeholder="Password" required> <br> <br>

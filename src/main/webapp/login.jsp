@@ -41,7 +41,7 @@
     <div class="container">
         <form action="login" method="post">
             <div>
-                <input type="text" name="email" placeholder="Email address" required>
+                <input type="text" name="username" placeholder="Username" required>
             </div>
             <div>
                 <input type="password" name="password" placeholder="Password" required><br><br>

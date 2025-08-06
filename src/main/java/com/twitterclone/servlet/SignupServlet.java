@@ -17,12 +17,11 @@ public class SignupServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         // Step 1: Get signup form data
-        String name = req.getParameter("name");
-        String email = req.getParameter("email");
+        String username = req.getParameter("username");
         String password = req.getParameter("password");
 
         // Validate input
-        if (name == null || email == null || email.trim().isEmpty() || password == null || password.trim().isEmpty()) {
+        if (username == null || username.trim().isEmpty() || password == null || password.trim().isEmpty()) {
             req.setAttribute("errorMsg", "Fill out all the fields");
             req.getRequestDispatcher("signup.jsp").forward(req, res);
             return;
@@ -33,11 +32,11 @@ public class SignupServlet extends HttpServlet{
             UserDAO dao = new UserDAO(getServletContext());
 
             // Step 3: Insert credentials using DAO
-            if (dao.registerUser(name, email, password)) {
+            if (dao.registerUser(username, password)) {
                 // Step 4a: If valid, store user info in session and redirect
                 req.getSession().invalidate(); // Clear any existing session
                 HttpSession session = req.getSession(true); // Create new session
-                session.setAttribute("user", email); //Store email in new session
+                session.setAttribute("user", username); //Store email in new session
                 session.setAttribute("signupMessage", "Your account has been successfully created!");
                 res.sendRedirect("login.jsp");
             } else {

@@ -17,14 +17,14 @@ public class UserDAO {
         this.context = context;
     }
 
-    // Validates email and password against DB
-    public boolean validateUser(String email, String password) throws Exception {
-        String query = "SELECT * FROM USER WHERE email_address = ? AND password = ?";
+    // Validates username and password against DB
+    public boolean validateUser(String username, String password) throws Exception {
+        String query = "SELECT * FROM USER WHERE username = ? AND password = ?";
         
         try(Connection conn = DBUtil.getConnection(context);
         PreparedStatement ps = conn.prepareStatement(query)) {
 
-            ps.setString(1, email);
+            ps.setString(1, username);
             ps.setString(2, password);
 
             try(ResultSet rs = ps.executeQuery()) {
@@ -33,14 +33,13 @@ public class UserDAO {
         }
     }
 
-    public boolean registerUser(String name, String email, String password) throws Exception {
-        String query = "INSERT INTO user (name, email_address, password) VALUES (?, ?, ?, ?)";
+    public boolean registerUser(String username, String password) throws Exception {
+        String query = "INSERT INTO user (username, password) VALUES (?, ?, ?, ?)";
         
         try(Connection conn = DBUtil.getConnection(context);
         PreparedStatement ps = conn.prepareStatement(query)) {
 
-            ps.setString(1, name);
-            ps.setString(3, email);
+            ps.setString(3, username);
             ps.setString(4, password);
 
            int rowsAffected = ps.executeUpdate();

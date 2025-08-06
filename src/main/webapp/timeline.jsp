@@ -18,7 +18,12 @@
     </style>
 </head>
 <body>
-    <h1>Timeline</h1>
-    <p>Here you can view posts by other users</p>
+    <h1>What's happening?</h1>
+    <p>Here you can publish your posts or view posts by other users</p>
+    <form action="post" method="post">
+        <textarea id="post" name="post" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Post">
+    </form>
 </body>
 </html>
