@@ -1,6 +1,8 @@
 <%@ page import="java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 
+<% List<String> posts = (List<String>) request.getAttribute("posts"); %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +20,22 @@
     </style>
 </head>
 <body>
+
     <h1>What's happening?</h1>
     <p>Here you can publish your posts or view posts by other users</p>
+
     <form action="post" method="post">
         <textarea id="post" name="post" rows="4" cols="50"></textarea>
         <br>
         <input type="submit" value="Post">
     </form>
+
+    <hr>
+    <h2>Timeline</h2>
+    <ul>
+        <% for(String post: posts){ %>
+            <li><%= post %></li>
+        <% } %>
+    </ul>
 </body>
 </html>

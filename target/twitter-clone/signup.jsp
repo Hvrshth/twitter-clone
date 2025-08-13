@@ -21,7 +21,7 @@
     <div class="container">
         <form action="signup" method="post">
            <div>
-                <input type="text" name="username" placeholder="Username" required> <br> <br>
+                <input type="text" name="username" placeholder="Username" required>
             </div>
             <div>
                 <input type="password" name="password" placeholder="Password" required> <br> <br>

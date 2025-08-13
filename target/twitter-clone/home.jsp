@@ -38,12 +38,12 @@
 
     <div class="container">
         <nav>
-            <a href="timeline.jsp" target="content-frame">Home</a>
+            <a href="timeline" target="content-frame">Home</a>
             <a href="messages.jsp" target="content-frame">Messages</a>
             <a href="profile.jsp" target="content-frame">Profile</a>
             <a href="logout.jsp">Logout</a>
         </nav>
-        <iframe name="content-frame" src="timeline.jsp"></iframe>
+        <iframe name="content-frame" src="timeline"></iframe>
     </div>
 </body>
 </html>
