@@ -34,13 +34,13 @@ public class UserDAO {
     }
 
     public boolean registerUser(String username, String password) throws Exception {
-        String query = "INSERT INTO user (username, password) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO user (username, password) VALUES (?, ?)";
         
         try(Connection conn = DBUtil.getConnection(context);
         PreparedStatement ps = conn.prepareStatement(query)) {
 
-            ps.setString(3, username);
-            ps.setString(4, password);
+            ps.setString(1, username);
+            ps.setString(2, password);
 
            int rowsAffected = ps.executeUpdate();
            return rowsAffected > 0; // true if user was inserted
