@@ -44,4 +44,22 @@
     <servlet-name>SignupServlet</servlet-name>
     <url-pattern>/signup</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TimelineServlet</servlet-name>
+    <servlet-class>com.twitterclone.servlet.TimelineServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TimelineServlet</servlet-name>
+    <url-pattern>/timeline</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>PostServlet</servlet-name>
+    <servlet-class>com.twitterclone.servlet.PostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostServlet</servlet-name>
+    <url-pattern>/post</url-pattern>
+  </servlet-mapping>
 </web-app>
