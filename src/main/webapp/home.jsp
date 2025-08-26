@@ -39,7 +39,7 @@
     <div class="container">
         <nav>
             <a href="timeline" target="content-frame">Home</a>
-            <a href="messages.jsp" target="content-frame">Messages</a>
+            <a href="messages" target="content-frame">Messages</a>
             <a href="profile.jsp" target="content-frame">Profile</a>
             <a href="logout.jsp">Logout</a>
         </nav>
