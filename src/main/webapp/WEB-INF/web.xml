@@ -69,4 +69,22 @@
     <servlet-name>MessagesServlet</servlet-name>
     <url-pattern>/messages</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UpdatePasswordServlet</servlet-name>
+    <servlet-class>com.twitterclone.servlet.UpdatePasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdatePasswordServlet</servlet-name>
+    <url-pattern>/updatepassword</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DeleteAccountServlet</servlet-name>
+    <servlet-class>com.twitterclone.servlet.DeleteAccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteAccountServlet</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
 </web-app>
