@@ -1,7 +1,9 @@
 com\twitterclone\servlet\LoginServlet.class
 com\twitterclone\dao\UserDAO.class
+com\twitterclone\servlet\DeleteAccountServlet.class
 com\twitterclone\dao\PostDAO.class
 com\twitterclone\servlet\SignupServlet.class
+com\twitterclone\servlet\UpdatePasswordServlet.class
 com\twitterclone\dao\MessageDAO.class
 com\twitterclone\util\DBUtil.class
 com\twitterclone\servlet\TimelineServlet.class

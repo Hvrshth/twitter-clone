@@ -1,3 +1,5 @@
+<!-- profile.jsp -->
+
 <%@ page import="java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 
@@ -19,6 +21,24 @@
 </head>
 <body>
     <h1>Profile Page</h1>
-    <p>Here you can view and update your profile information.</p>
+    <%-- Success message after updating the password --%>
+    <% String Message = (String) session.getAttribute("Message"); %>
+    <% if (Message != null) { %>
+        <p style="color: green; text-align: center;"><%= Message %></p>
+        <% session.removeAttribute("Message"); %>
+    <% } %>
+
+
+    <br>
+    <form action="updatepassword" method="post">
+        <label>New Password:</label>
+        <input type="password" name="newPassword" required>
+        <button type="submit">Update Password</button>
+    </form>
+    <br>
+    <form action="delete" method="post">
+        <label>Delete Account:</label>
+        <button type="submit">Delete Account</button>
+    </form>
 </body>
 </html>
