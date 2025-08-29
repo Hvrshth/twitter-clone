@@ -17,9 +17,9 @@ public class UserDAO {
         this.context = context;
     }
 
-    // Validates username and password against DB
+    // Validates username and password
     public boolean validateUser(String username, String password) throws Exception {
-        String query = "SELECT * FROM USER WHERE username = ? AND password = ?";
+        String query = "SELECT * FROM user WHERE username = ? AND password = ?";
         
         try(Connection conn = DBUtil.getConnection(context);
         PreparedStatement ps = conn.prepareStatement(query)) {
@@ -33,6 +33,7 @@ public class UserDAO {
         }
     }
 
+    // Registers new user
     public boolean registerUser(String username, String password) throws Exception {
         String query = "INSERT INTO user (username, password) VALUES (?, ?)";
         
@@ -44,6 +45,33 @@ public class UserDAO {
 
            int rowsAffected = ps.executeUpdate();
            return rowsAffected > 0; // true if user was inserted
+        }
+    }
+
+    // Updates password
+    public boolean updatePassword(String username, String password) throws Exception {
+        String query = "UPDATE user SET password = ? WHERE username = ?";
+        try(Connection conn = DBUtil.getConnection(context);
+        PreparedStatement ps = conn.prepareStatement(query)) {
+
+            ps.setString(1, password);
+            ps.setString(2, username);
+
+           int rowsAffected = ps.executeUpdate();
+           return rowsAffected > 0; // true if password was updated
+        }
+    }
+
+    // Deletes account
+    public boolean deleteUser(String username) throws Exception {
+        String query = "DELETE FROM user WHERE username = ?";
+        try(Connection conn = DBUtil.getConnection(context);
+        PreparedStatement ps = conn.prepareStatement(query)) {
+
+            ps.setString(1, username);
+
+           int rowsAffected = ps.executeUpdate();
+           return rowsAffected > 0; // true if account was deleted
         }
     }
 }
