@@ -36,7 +36,6 @@ public class SignupServlet extends HttpServlet{
                 // Step 4a: If valid, store user info in session and redirect
                 req.getSession().invalidate(); // Clear any existing session
                 HttpSession session = req.getSession(true); // Create new session
-                session.setAttribute("user", username); //Store email in new session
                 session.setAttribute("signupMessage", "Your account has been successfully created!");
                 res.sendRedirect("login.jsp");
             } else {
