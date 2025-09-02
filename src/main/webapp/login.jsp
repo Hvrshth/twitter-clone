@@ -23,7 +23,9 @@
 </head>
 <body>
     <h1>
-        <img src="images/logo.png" alt="logo" style="height: 50px; vertical-align: middle;">
+        <a href="login.jsp">
+            <img src="images/logo.png" alt="logo" style="height: 50px; vertical-align: middle;">
+        </a>
     </h1>
 
     <%-- Success message after signup --%>

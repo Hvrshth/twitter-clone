@@ -24,12 +24,9 @@
 </head>
 
 <body>
-    
     <% 
         String uname = (String) session.getAttribute("user");
     %>
-
-    <h1>Welcome: <%= uname%></h1>
     <header>
         <a href="home.jsp">
             <img src="images/logo.png" alt="logo" style="height: 50px; vertical-align: middle;">
